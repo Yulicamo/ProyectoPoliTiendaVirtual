@@ -1,0 +1,272 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f4f9; 
+    color: #333;
+}
+
+header {
+    background-color: #eac9d8; 
+    color: #333;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Estilos para la alineación de los enlaces y botones */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-right: 20px; /* espacio entre enlaces y botones */
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px; 
+    background-color: #eac9d8; 
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #b86f85; 
+}
+
+/* Sección hero con imagen de fondo y overlay negro */
+#hero {
+    height: 100vh; /* La sección ocupará la altura completa de la ventana */
+    background: url('../img/Fondo2.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* Ajusta según la altura del encabezado */
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro con transparencia */
+    z-index: 1; /* Hace que la capa esté por debajo del texto */
+}
+
+/* Texto dentro de la sección hero */
+.hero-text {
+    position: relative; /* Asegura que el texto esté encima*/
+    z-index: 2; /* Coloca el texto por encima*/
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.hero-text h2 {
+    font-size: 50px;
+    color: #fff; 
+    font-family: 'Georgia', serif;
+}
+
+/* Sección "Nosotros" */
+#nosotros {
+    padding: 80px 20px;
+    background-color: #f7e8f3;
+    text-align: center;
+}
+
+#nosotros h2 {
+    color: #b86f85;
+    font-size: 36px;
+}
+
+/* Sección de servicios */
+#services {
+    padding: 60px 20px;
+    background-color: #f8f4f9;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto al pasar el cursor sobre la card */
+.card:hover {
+    transform: scale(1.05); /* Aumentar el tamaño al pasar el cursor */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Aumentar la sombra */
+}
+
+.card img {
+    width: 100%; /* La imagen ocupará todo el ancho de la card */
+    height: auto; /* Mantener la proporción de la imagen */
+    max-height: 400px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+/* Sección de contacto */
+#contact {
+    padding: 60px 20px;
+    background-color: #f7e8f3;
+    text-align: center;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #b86f85;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #d392a1;
+}
+
+/* Footer */
+footer {
+    background-color: #eac9d8;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Modales */
+#loginModal, #registroModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+}
+
+#loginModal .modal-content, #registroModal .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 40%;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Estilos formularios modales */
+#loginModal form input, #registroModal form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#loginModal form input:focus, #registroModal form input:focus {
+    outline: none;
+    border-color: #b86f85; /* Color de borde en foco */
+    box-shadow: 0 0 5px rgba(184, 111, 133, 0.5); /* Efecto sombra */
+}
+
+#loginModal form button, #registroModal form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b86f85;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#loginModal form button:hover, #registroModal form button:hover {
+    background-color: #d392a1; /* Color más claro al pasar el mouse */
+}
+
+/* diseño responsive */
+@media (max-width: 768px) {
+    .container-header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .hero-text h2 {
+        font-size: 36px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 90%;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h2 {
+        font-size: 28px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
+
